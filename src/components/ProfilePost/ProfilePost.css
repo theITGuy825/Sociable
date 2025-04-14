@@ -1,0 +1,147 @@
+/* Post Feed Scrollable Container */
+.post-feed-container {
+  max-height: 640px; /* Set max height */
+  overflow-y: auto; /* Enable scrolling */
+  padding-top: 10px;
+  scrollbar-width: thin;
+  margin-right: -10px;
+  scrollbar-color: transparent transparent;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.post-feed-container::-webkit-scrollbar {
+  width: 0px;
+}
+
+.post-feed-container::-webkit-scrollbar-thumb,
+.post-feed-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Individual Post styles */
+.post {
+  background-color: white;
+  padding: 15px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Inconsolata", monospace;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.post:hover {
+  transform: scale(1);
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Post Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Profile Picture */
+.post-header img {
+  margin-right: 10px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+/* Author Name */
+.post .author {
+  color: #15243b; /* Match sidebar text color */
+  font-weight: bold;
+}
+
+/* Post Content */
+.post .content {
+  margin-top: 5px;
+  color: #333;
+  font-size: 1.1em;
+}
+
+/* Post Action Buttons */
+.post-actions-profile {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-left: 80%;
+}
+
+/* Edit and Delete Buttons */
+.postSaveCancelbtn {
+  display: flex;
+  .savePostEdit {
+    width: 25%;
+    margin-left: 50%;
+    margin-right: 20px;
+    background-color: rgba(185,232,228,1);
+    color: black;
+    box-sizing:border-box;
+  }
+  .cancelPostEdit{
+    width: 25%;
+    background-color: rgba(185,232,228,1);
+    color: black;
+  }
+
+  .cancelPostEdit:hover{
+    background-color: rgba(105,167,161,1);
+    color:white;
+  }
+
+  .savePostEdit:hover{
+    background-color: rgba(105,167,161,1);
+    color: white;
+  }
+}
+.edit-button,
+.delete-button {
+  padding: 10px 10px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+  background-color: rgba(185, 232, 228, 1);
+  color: black;
+  border-radius: 0px;
+  width: 100%;
+}
+
+.edit-button:hover {
+  background-color: rgba(105, 167, 161, 1);
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: rgb(236, 144, 144);
+  color: white;
+}
+.textArea-editing {
+  textarea {
+    justify-self: center;
+    width: 95%;
+  }
+}
+/* Responsive Adjustments */
+
+@media (max-width: 1000px) {
+  .editing-btn {
+    display: none;
+  }
+  .deleting-btn {
+    display: none;
+  }
+  .savePostEdit {
+    
+    margin-left: 30%;
+    
+  }
+  .post-actions-profile{
+    margin-left: 30%;
+  }
+}
+

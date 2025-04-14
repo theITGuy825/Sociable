@@ -1,0 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 240px;
+  background: linear-gradient(
+        180deg,
+        #69a7a1 0%,
+        #b9e8e4 7.5%,
+        rgb(255, 255, 255) 15%
+      )
+      top,
+    linear-gradient(0deg, #69a7a1 0%, #b9e8e4 7.5%, rgb(255, 255, 255) 15%)
+      bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  color: #15243b;
+  border-right: 2px solid #ccc;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  font-family: "Inconsolata", monospace;
+}
+
+.sidebar.collapsed {
+  width: 65px !important;
+}
+
+.hamburger-btn {
+  all: unset;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #15243b;
+  z-index: 1001;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: transparent 2px solid;
+}
+
+.hamburger-btn:hover {
+  background-color: unset;
+  color: #008080;
+  border: white 2px solid;
+  transition: border 0.4s ease-in-out;
+  border-radius: 10px;
+  
+}
+
+.sidebar-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 15px 15px;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logoSidebar {
+  max-width: 180px;
+  height: auto;
+  border-bottom: 2px solid #15243b;
+  padding-bottom: 10px;
+}
+
+.search-container {
+  all: unset;
+  position: relative;
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  all: unset;
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #008080;
+  border-radius: 0px;
+  width: 180px;
+  font-size: 14px;
+  text-align: start;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  transition: border-radius ease-in-out 0.3s;
+}
+
+
+
+.search-box:hover {
+  color: black;
+  background-color: white;
+  padding: 10px;
+  border: 2px solid #008080;
+  border-radius: 0px;
+  width: 180px;
+}
+
+.search-box:focus {
+  border-radius: 10px 10px 0px 0px;
+  transition: border-radius ease-in-out 0.3s;
+}
+
+.search-results {
+  all: unset;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: white;
+  border: 2px solid #008080;
+  border-top: none;
+  z-index: 1002;
+  padding: 5px 0;
+}
+
+.search-result {
+  display: block;
+  padding: 8px 10px;
+  color: #15243b;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+  text-align: center;
+}
+
+.search-result:hover {
+  background-color: #a8d8d5;
+}
+
+.title-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 5px;
+  margin: 5px 0;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 180px;
+  justify-content: flex-start;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: #008080;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: border-bottom 0.6s ease-in-out;
+  border-bottom: 2px solid black;
+}
+
+.nav-icon {
+  margin-right: 10px;
+  font-size: 18px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.nav-text {
+  white-space: nowrap;
+}
+
+@media (min-width: 1001px) {
+  .sidebar {
+    width: 240px !important;
+  }
+
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .sidebar.collapsed .sidebar-content {
+    display: none;
+  }
+}
