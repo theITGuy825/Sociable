@@ -76,11 +76,9 @@ function Sidebar() {
 
   const menuItems = [
     { title: "Home", icon: <FaHome />, link: "/home" },
-    { title: "Job Board", icon: <FaBriefcase />, link: "/jobs" },
-    { title: "Trainings", icon: <FaChalkboardTeacher />, link: "/trainings" },
     { title: "Messenger", icon: <FaBlog />, link: "/Messenger" },
     { title: "My Profile", icon: <FaUser />, link: userId ? `/profile/${userId}` : "/login"},
-    { title: "Code Help", icon: <FaSchool/>, link: "https://discord.com/invite/code", target: "_blank" },
+    { title: "Discord Server", icon: <FaSchool/>, link: "https://discord.gg/nmrDsps9", target: "_blank" },
   ];
 
   const showHamburger = windowWidth <= 1000;
@@ -99,9 +97,6 @@ function Sidebar() {
 
       {(!isCollapsed || windowWidth > 1000) && (
         <div className="sidebar-content">
-          <div className="logo-container">
-            <img src="/image073263.png" alt="logo" className="logoSidebar" />
-          </div>
 
           <div className="search-container">
             <input
