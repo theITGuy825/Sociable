@@ -86,7 +86,6 @@ function Register() {
 
   return (
     <div id='register-container' className='register-container-register'>
-      <img src='/image073263.png' alt="description" className='logo-register'/>
       <div className='register-form-register'>
         <h2 className='register-header-register'>REGISTER</h2>
         <form className='form-register' onSubmit={handleSubmit}>

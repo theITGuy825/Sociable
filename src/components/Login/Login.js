@@ -38,7 +38,7 @@ function Login() {
   return (
     <div className="login-container">
       {/* Logo Image */}
-      <img src='/image073263.png' alt="description"  className='logo'/>
+      
 
       <div className="login-form">
         <h2>LOGIN</h2>
