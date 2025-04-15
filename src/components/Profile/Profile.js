@@ -31,11 +31,15 @@ function Profile() {
         try {
           const userDoc = await getDoc(doc(db, "users", userId));
           if (userDoc.exists()) {
-            setUserData({
-              ...userDoc.data(),
-              // Ensure profilePic has a fallback
-              profilePic: userDoc.data().profilePic || "/profilepic.png",
-            });
+            const data = userDoc.data();
+            if (data.userType === "freelancer") {
+              setUserData({
+                ...data,
+                profilePic: data.profilePic || "/profilepic.png",
+              });
+            } else {
+              setError("This profile is not a freelancer.");
+            }
           } else {
             setError("User data not found");
           }
@@ -76,7 +80,6 @@ function Profile() {
       <div className="profile-content">
         <h2 className="myProfile">My Profile</h2>
 
-        {/* Profile Picture with fallback */}
         <div className="profile-picture">
           <img
             src={userData.profilePic}
@@ -87,7 +90,6 @@ function Profile() {
           />
         </div>
 
-        {/* Edit Button */}
         {auth.currentUser && auth.currentUser.uid === userId && (
           <button
             className="editProfileDetails"
@@ -101,104 +103,53 @@ function Profile() {
           <LinkUpButton targetUserId={userId} />
         )}
 
-        {userData.userType === "freelancer" && (
-          <div className="freelancer-profile">
-            <h3>Freelancer Profile</h3>
-            {isEditing ? (
-              <div>
-                <label>First Name:</label>
-                <input
-                  type="text"
-                  value={userData.firstName || ""}
-                  onChange={(e) =>
-                    setUserData({ ...userData, firstName: e.target.value })
-                  }
-                />
-                <label>Last Name:</label>
-                <input
-                  type="text"
-                  value={userData.lastName || ""}
-                  onChange={(e) =>
-                    setUserData({ ...userData, lastName: e.target.value })
-                  }
-                />
-                <label>Email:</label>
-                <input
-                  type="email"
-                  value={userData.email || ""}
-                  onChange={(e) =>
-                    setUserData({ ...userData, email: e.target.value })
-                  }
-                />
-                <button onClick={handleSaveProfile}>Save</button>
-              </div>
-            ) : (
-              <div className="freelancer-profile-details">
-                <p>
-                  Name: {userData.firstName} {userData.lastName}
-                </p>
-                <p>Email: {userData.email}</p>
-                <p>User Type: {userData.userType}</p>
-              </div>
-            )}
-          </div>
-        )}
-
-        {userData.userType === "business" && (
-          <div className="business-profile">
-            <h3>Business Profile</h3>
-            {isEditing ? (
-              <div>
-                <label>Business Name:</label>
-                <input
-                  type="text"
-                  value={userData.businessName || ""}
-                  onChange={(e) =>
-                    setUserData({ ...userData, businessName: e.target.value })
-                  }
-                />
-                <label>Business Address:</label>
-                <input
-                  type="text"
-                  value={userData.businessAddress || ""}
-                  onChange={(e) =>
-                    setUserData({
-                      ...userData,
-                      businessAddress: e.target.value,
-                    })
-                  }
-                />
-                <label>Business Description:</label>
-                <textarea
-                  value={userData.businessDescription || ""}
-                  onChange={(e) =>
-                    setUserData({
-                      ...userData,
-                      businessDescription: e.target.value,
-                    })
-                  }
-                />
-                <label>Email:</label>
-                <input
-                  type="email"
-                  value={userData.email || ""}
-                  onChange={(e) =>
-                    setUserData({ ...userData, email: e.target.value })
-                  }
-                />
-                <button onClick={handleSaveProfile}>Save</button>
-              </div>
-            ) : (
-              <div>
-                <p>Business Name: {userData.businessName}</p>
-                <p>Address: {userData.businessAddress}</p>
-                <p>Description: {userData.businessDescription}</p>
-                <p>Email: {userData.email}</p>
-                <p>User Type: {userData.userType}</p>
-              </div>
-            )}
-          </div>
-        )}
+        <div className="freelancer-profile">
+          <h3>Freelancer Profile</h3>
+          {isEditing ? (
+            <div>
+              <label>First Name:</label>
+              <input
+                type="text"
+                value={userData.firstName || ""}
+                onChange={(e) =>
+                  setUserData({ ...userData, firstName: e.target.value })
+                }
+              />
+              <label>Last Name:</label>
+              <input
+                type="text"
+                value={userData.lastName || ""}
+                onChange={(e) =>
+                  setUserData({ ...userData, lastName: e.target.value })
+                }
+              />
+              <label>Email:</label>
+              <input
+                type="email"
+                value={userData.email || ""}
+                onChange={(e) =>
+                  setUserData({ ...userData, email: e.target.value })
+                }
+              />
+              <label>Bio:</label>
+              <textarea
+                value={userData.bio || ""}
+                onChange={(e) =>
+                  setUserData({ ...userData, bio: e.target.value })
+                }
+              />
+              <button onClick={handleSaveProfile}>Save</button>
+            </div>
+          ) : (
+            <div className="freelancer-profile-details">
+              <p>
+                Name: {userData.firstName} {userData.lastName}
+              </p>
+              <p>Email: {userData.email}</p>
+              <p>Bio: {userData.bio?.trim() || "none"}</p>
+            </div>
+          )}
+        </div>
 
         <ProfilePost />
       </div>

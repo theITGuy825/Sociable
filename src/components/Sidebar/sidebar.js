@@ -78,7 +78,6 @@ function Sidebar() {
     { title: "Home", icon: <FaHome />, link: "/home" },
     { title: "Messenger", icon: <FaBlog />, link: "/Messenger" },
     { title: "My Profile", icon: <FaUser />, link: userId ? `/profile/${userId}` : "/login"},
-    { title: "Discord Server", icon: <FaSchool/>, link: "https://discord.gg/nmrDsps9", target: "_blank" },
   ];
 
   const showHamburger = windowWidth <= 1000;
