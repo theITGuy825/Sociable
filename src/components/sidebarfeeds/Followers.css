@@ -3,7 +3,7 @@
 .followers-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid #ccc;
+  border: 2px solid #7289da;
   max-height: 200px;
   overflow-y: auto; 
 }
@@ -15,11 +15,12 @@
   padding: 10px;
   transition: background-color 0.3s ease;
   cursor: pointer;
-  border-bottom: 1px solid #ccc; 
+  background-color: #424549;
+  border-bottom: 1px solid #7289da; 
 }
 
 .follower-item:hover {
-  background-color: #e0e0e0;
+  background-color: #7289da;
 }
 
 /* Flex container for profile image and full name */
@@ -45,12 +46,12 @@
   font-size: 16px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
-  color: #333;
+  color: white;
 }
 
 /* Styling for the icon (user or business) */
 .follower-info svg {
-  color: #555;
+  color: white;
 }
 
 /* Styling for the link to the profile */
@@ -61,7 +62,7 @@
 
 /* Error message styling */
 .noFollowers {
-  color: black;
+  color: #7289da;
   font-weight: bold;
   font-size: 14px;
   text-align: center;

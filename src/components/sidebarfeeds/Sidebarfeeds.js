@@ -17,18 +17,15 @@ function Sidebarfeeds() {
   const [selectedSection, setSelectedSection] = useState("following");
   const [activeItem, setActiveItem] = useState(null);
   const [showAllSuggested, setShowAllSuggested] = useState(false);
-  
+
   const [previewData, setPreviewData] = useState({
     suggested: null,
-
   });
   const [fullData, setFullData] = useState({
     suggested: null,
-
   });
   const [loading, setLoading] = useState({
     suggested: false,
-
   });
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -43,8 +40,8 @@ function Sidebarfeeds() {
       }
     };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   // Fetch preview data on component mount
@@ -58,7 +55,6 @@ function Sidebarfeeds() {
         const suggestedPreview = await SuggestedFriends.fetchPreview();
         setPreviewData({
           suggested: suggestedPreview,
-        
         });
       } catch (error) {
         console.error("Error fetching preview data:", error);
@@ -77,38 +73,37 @@ function Sidebarfeeds() {
   const handleItemClick = async (index) => {
     if (index === 0) {
       if (!fullData.suggested && !loading.suggested) {
-        setLoading(prev => ({...prev, suggested: true}));
+        setLoading((prev) => ({ ...prev, suggested: true }));
         try {
           const data = await SuggestedFriends.fetchAll();
-          setFullData(prev => ({...prev, suggested: data}));
+          setFullData((prev) => ({ ...prev, suggested: data }));
         } catch (error) {
           console.error("Error fetching suggested friends:", error);
         } finally {
-          setLoading(prev => ({...prev, suggested: false}));
+          setLoading((prev) => ({ ...prev, suggested: false }));
         }
       }
       setShowAllSuggested(!showAllSuggested);
-    } 
+    }
     setActiveItem(activeItem === index ? null : index);
   };
 
   const menuItems = [
-    { 
-      title: "Suggested Friends", 
+    {
+      title: "Suggested Friends",
       icon: <FaUserFriends />,
-      link: "#"
+      link: "#",
     },
-    
   ];
 
   // Calculate width based on window size
   const getSidebarWidth = () => {
     if (windowWidth <= 1000) {
-      return isCollapsed ? '30px' : '300px';
+      return isCollapsed ? "30px" : "300px";
     } else if (windowWidth > 1000 && windowWidth <= 1400) {
-      return '225px';
+      return "225px";
     } else {
-      return '350px';
+      return "350px";
     }
   };
 
@@ -116,21 +111,22 @@ function Sidebarfeeds() {
   const showArrow = windowWidth <= 1000;
 
   return (
-    <div 
-      className={`sidebarfeeds ${isCollapsed ? 'collapsed' : ''}`}
+    <div
+      className={`sidebarfeeds ${isCollapsed ? "collapsed" : ""}`}
       style={{
-        width: getSidebarWidth()
+        width: getSidebarWidth(),
       }}
     >
       {showArrow && (
-        <button 
-          className="arrow-icon"
-          onClick={toggleSidebar}
-        >
-          {isCollapsed ?  <FaArrowLeft /> : <FaArrowRight />}
+        <button className="arrow-icon" onClick={toggleSidebar}>
+          {isCollapsed ? (
+            <FaArrowLeft className="arrow-icon" />
+          ) : (
+            <FaArrowRight className="arrow-icon" />
+          )}{" "}
         </button>
       )}
-      
+
       {(!isCollapsed || windowWidth > 1000) && (
         <div className="sidebarfeeds-title">
           <h3 className="my-app-updates">Updates</h3>
@@ -153,14 +149,14 @@ function Sidebarfeeds() {
                 {index === 0 && (
                   <div className="submenu">
                     {showAllSuggested ? (
-                      <SuggestedFriends 
-                        data={fullData.suggested} 
-                        showAll={true} 
+                      <SuggestedFriends
+                        data={fullData.suggested}
+                        showAll={true}
                       />
                     ) : (
-                      <SuggestedFriends 
-                        data={previewData.suggested} 
-                        showAll={false} 
+                      <SuggestedFriends
+                        data={previewData.suggested}
+                        showAll={false}
                       />
                     )}
                   </div>
@@ -172,16 +168,16 @@ function Sidebarfeeds() {
           <div className="friends">
             <button
               className={selectedSection === "followers" ? "active-btn" : ""}
-              onClick={() => setSelectedSection("followers")} 
+              onClick={() => setSelectedSection("followers")}
             >
-              <FaUserCheck className="userCheck"/>
+              <FaUserCheck className="userCheck" />
               Followers
             </button>
             <button
               className={selectedSection === "following" ? "active-btn" : ""}
               onClick={() => setSelectedSection("following")}
             >
-              <FaRegHandshake className="handShake"/>
+              <FaRegHandshake className="handShake" />
               Following
             </button>
           </div>

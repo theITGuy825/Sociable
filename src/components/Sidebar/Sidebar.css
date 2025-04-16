@@ -6,19 +6,10 @@
   top: 0;
   height: 100vh;
   width: 240px;
-  background: linear-gradient(
-        180deg,
-        #69a7a1 0%,
-        #b9e8e4 7.5%,
-        rgb(255, 255, 255) 15%
-      )
-      top,
-    linear-gradient(0deg, #69a7a1 0%, #b9e8e4 7.5%, rgb(255, 255, 255) 15%)
-      bottom;
-  background-repeat: no-repeat;
+  background-color: #1e2124;
   background-size: 100% 50%;
-  color: #15243b;
-  border-right: 2px solid #ccc;
+  color: white;
+  border-right: 2px solid #7289da;
   overflow-y: auto;
   transition: width 0.3s ease;
   z-index: 1000;
@@ -38,7 +29,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #15243b;
+  color: white;
   z-index: 1001;
   padding: 0;
   width: 30px;
@@ -51,11 +42,7 @@
 
 .hamburger-btn:hover {
   background-color: unset;
-  color: #008080;
-  border: white 2px solid;
-  transition: border 0.4s ease-in-out;
-  border-radius: 10px;
-  
+  color: #7289da;
 }
 
 .sidebar-content {
@@ -90,11 +77,13 @@
 }
 
 .search-box {
+  margin-top: 20px;
+  margin-bottom: 20px;
   all: unset;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #424549;
   padding: 10px;
-  border: 2px solid #008080;
+  border: 2px solid #7289da;
   border-radius: 0px;
   width: 180px;
   font-size: 14px;
@@ -104,20 +93,21 @@
   transition: border-radius ease-in-out 0.3s;
 }
 
-
-
 .search-box:hover {
   color: black;
-  background-color: white;
+  background-color: #424549;
   padding: 10px;
-  border: 2px solid #008080;
-  border-radius: 0px;
+  border: 2px solid #7289da;
+  border-radius: 10px;
   width: 180px;
 }
 
 .search-box:focus {
   border-radius: 10px 10px 0px 0px;
   transition: border-radius ease-in-out 0.3s;
+  color: white;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
 }
 
 .search-results {
@@ -129,17 +119,22 @@
   width: 100%;
   max-height: 200px;
   overflow-y: auto;
-  background-color: white;
-  border: 2px solid #008080;
+  color: white;
+  background-color: #424549;
+  border: 2px solid #7289da;
   border-top: none;
   z-index: 1002;
   padding: 5px 0;
+  border-radius: 0px 0px 10px 10px;
 }
-
+.search-results a{
+  color: white;
+  font-weight: bold;
+  font-family: "Inconsolata", monospace;
+}
 .search-result {
   display: block;
   padding: 8px 10px;
-  color: #15243b;
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.2s;
@@ -147,7 +142,8 @@
 }
 
 .search-result:hover {
-  background-color: #a8d8d5;
+  background-color: #7289da;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .title-nav {
@@ -160,7 +156,7 @@
 .nav-link {
   display: flex;
   align-items: center;
-  color: black;
+  color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 16px;
@@ -175,10 +171,10 @@
 }
 
 .nav-link:hover {
-  color: #008080;
+  color: #7289da;
   background-color: rgba(0, 0, 0, 0.05);
   transition: border-bottom 0.6s ease-in-out;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #7289da;
 }
 
 .nav-icon {

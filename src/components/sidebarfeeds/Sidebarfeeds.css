@@ -4,14 +4,14 @@
 .sidebarfeeds {
   width: 350px;
   width: 100%; /* Fixed width for the sidebar */
-  background-color: white; /* Dark blue background */
-  color: black;
+  background-color: #1e2124; /* Dark blue background */
+  color: white;
   padding: 20px;
   transition: max-width 0.3s ease;
   position: fixed; /* Fixes the sidebar on the right side */
   top: 0; /* Sticks it to the top of the screen */
   right: 0; /* Aligns the sidebar to the right */
-  border-left: 2px solid #ddd; /* Border between sidebar and content */
+  border-left: 2px solid #7289da; /* Border between sidebar and content */
   height: 100vh; /* Makes the sidebar full height */
   font-family: "Inconsolata", monospace;
   font-size: 14px; /* Font size for the sidebar text */
@@ -20,13 +20,13 @@
   .my-app-updates {
     text-align: center;
     padding: 5px;
-    background-color: white;
-    color: black;
+    background-color: #424549;
+    color: 	white;
     border-radius: 5px;
     font-weight: 600;
     font-style: italic;
     font-size: 30px;
-    border: #15243b 2px solid;
+    border: 	#7289da 2px solid;
   }
 
   .title-navigation {
@@ -41,14 +41,14 @@
 
       .textRender {
         text-decoration: none;
-        color: black;
+        color: white;
         margin-left: 5px;
         font-size: 16px;
         font-weight: bold;
         padding: 10px;
       }
       .iconRender {
-        color: black;
+        color: #7289da;
         font-size: 20px;
       }
       .textRender:hover + .iconRender {
@@ -58,12 +58,9 @@
 
     a:hover {
       transition: border-bottom 0.6s ease-in-out;
-      border-bottom: 2px solid black;
-      .iconRender {
-        color: #008080;
-      }
+      border-bottom: 2px solid #7289da;
       .textRender {
-        color: #008080;
+        color: #7289da;
       }
     }
   }
@@ -75,39 +72,58 @@
 
     button {
       border: none;
-      background-color: white;
+      background-color: #282b30;
       border-radius: 0;
-      color: black;
-      border: 2px solid black;
+      color: white;
+      border: 1px solid #7289da;
       font-weight: bold;
       width: 100%;
 
       .handShake{
         padding-right:5px;
         font-size: 16px;
+        color: #7289da;
       }
 
       .userCheck {
         padding-right: 5px;
         font-size:16px;
+        color: #7289da;
+      }
+      .userCheckText{
+        color: white;
       }
     }
 
     .active-btn {
-      background-color: #008080;
-      color: white;
+      background-color: #7289da;
+      color: #1e2124;
+      .handShake{
+        color: #1e2124;
+      }
+
+      .userCheck {
+        color: #1e2124;
+      }
     }
   }
 }
-.arrow-icon {
+.arrow-icon  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
+  justify-self: center;
   border: none;
+  color: white;
+  font-size: 20px;
 }
 
 .arrow-icon:hover {
   background-color: transparent;
   border-radius: 0%;
-  color: #008080;
+  color: #7289da;
+  
 }
 .sidebarfeeds {
   transition: width 0.3s ease;
@@ -122,14 +138,6 @@
   display: none;
 }
 
-.arrow-icon {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  font-size: 16px;
-  color: #333;
-}
 @media (min-width: 1000px) and (max-width: 1400px) {
   .sidebarfeeds {
     max-width: 225px;
