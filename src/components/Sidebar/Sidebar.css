@@ -9,7 +9,7 @@
   background-color: #1e2124;
   background-size: 100% 50%;
   color: white;
-  border-right: 2px solid #7289da;
+  border-right: 2px solid #ccc;
   overflow-y: auto;
   transition: width 0.3s ease;
   z-index: 1000;

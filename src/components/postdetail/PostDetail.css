@@ -1,10 +1,16 @@
+/*Hex	RGB
+Milky dark blue #7289da	(114,137,218)
+Lightest Dark - #424549	(66,69,73)
+Light Dark   -  #36393e	(54,57,62)
+Dark black   -  #282b30	(40,43,48)
+Darkest black - #1e2124	(30,33,36)*/
 .post-detail-container {
   max-width: 600px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background: white;
+  background: #282b30;
   
 
 }
