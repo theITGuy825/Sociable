@@ -5,41 +5,61 @@ Light Dark   -  #36393e	(54,57,62)
 Dark black   -  #282b30	(40,43,48)
 Darkest black - #1e2124	(30,33,36)*/
 .post-detail-container {
-  max-width: 600px;
+  max-width: auto;
   margin: auto;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
   background: #282b30;
-  
-
+  margin-left: 260px;
+  margin-right: 410px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
 }
 
 .post-header {
   display: flex;
   align-items: center;
   gap: 10px;
+}
 
+.post-header h2 {
+  font-size: 24px;
+  text-align: left;
+  color: #7289da; 
+  margin: 0;
 }
 
 .post-content {
-  text-align: left; /* More natural for reading */
-  color: #333; /* Off-black for readability */
+  text-align: left; 
+  color: white; 
+  background-color: #424549;
+  padding: 20px;
+  border-bottom: #7289da 1px solid;
 }
 
+.post-content-users {
+  text-align: left;
+  color: white;
+  background-color: transparent;
+  
+
+}
 .post-meta {
+  text-align: left;
   font-size: 12px;
-  color: #666; /* Off-grey */
+  color: white; 
   margin-top: 5px;
 }
 
 .profilepic {
   border-radius: 50%;
-  margin-right: 10px;
+  align-self: center;
 }
 
 .post-actions {
   display: flex;
+  justify-content: flex-end;
   gap: 10px;
   margin-top: 10px;
 }
@@ -48,8 +68,18 @@ Darkest black - #1e2124	(30,33,36)*/
   background: none;
   border: none;
   cursor: pointer;
+  color: white;
   font-size: 16px;
-  color: #333; /* Default text color */
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  background-color: #424549;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.post-actions button:hover {
+  background-color: #7289da; 
+  color: white;
 }
 
 .liked {
@@ -58,41 +88,82 @@ Darkest black - #1e2124	(30,33,36)*/
 
 .comments-section {
   margin-top: 20px;
+  color: white;
+  border-radius: 0px;
 }
 
 .comment {
   display: flex;
   align-items: center;
-  gap: 10px;
   padding: 5px 0;
-  color: #333;
+  border-radius: 0px;
+  border-bottom: #7289da 2px solid;
+  color: #7289da; 
+  background-color: #36393e;
 }
 
 .comment-meta {
   font-size: 12px;
-  color: #666;
+  margin: 0px;
+  color: white;
+  padding-bottom: 5px;
+  border-bottom: #7289da 1px solid;
 }
 
+.comments-section h5 {
+  font-size: 18px;
+  color:white;
+}
 .comment-pic {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  padding: 10px;
 }
 
 .comment-input {
   display: flex;
   gap: 10px;
   margin-top: 10px;
+  
 }
 
 .comment-input input {
   flex: 1;
+  color: white;
   padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  color: #333;
+  border: 2px solid #ffffff;
+  border-radius: 0px;
+  background-color: #424549;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
 }
 
-p {
-  color: #333; /* Off-black for consistency */
+.postingComment {
+  background-color: #7289da; /* Milky dark blue */
+  color: white;
+  padding: 8px 12px;
+  border-radius: 0px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+  border: 2px solid #7289da; /* Milky dark blue */
+}
+.postingComment:hover {
+  background-color: #424549; /* Light Dark */
+  color: white;
+  border-radius: 0px;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+}
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .post-detail-container {
+    margin-right: 285px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .post-detail-container{
+    margin-right: 90px;
+    margin-left: 90px;
+  }
 }

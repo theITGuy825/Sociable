@@ -1,9 +1,9 @@
+import './MessageInput.css';
 import { useState } from 'react';
 import { Box, TextField, IconButton, InputAdornment } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
 const MessageInput = ({ onSend }) => {
-  
   const [message, setMessage] = useState('');
 
   const handleSubmit = (e) => {
@@ -15,9 +15,9 @@ const MessageInput = ({ onSend }) => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit} sx={{ p: 2 }}>
+    <Box component="form" onSubmit={handleSubmit} className="message-form">
       <TextField
-        fullWidth
+        className="message-input"
         variant="outlined"
         placeholder="Type a message..."
         value={message}

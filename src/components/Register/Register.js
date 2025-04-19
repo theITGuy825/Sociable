@@ -86,6 +86,7 @@ function Register() {
 
   return (
     <div id='register-container' className='register-container-register'>
+      <h1 className='register-header-web-name'>Sociable</h1>
       <div className='register-form-register'>
         <h2 className='register-header-register'>REGISTER</h2>
         <form className='form-register' onSubmit={handleSubmit}>
@@ -151,7 +152,7 @@ function Register() {
           {error && <p className='error-message-register' style={{ color: "red" }}>{error}</p>}
         </form>
         <p className='login-redirect-register'>
-          Already have an account? <span className='login-link-register' onClick={() => navigate("/login")}>Sign In</span>
+          <span className='alrHaveAcc'>Already have an account? </span><span className='login-link-register' onClick={() => navigate("/login")}>Sign In</span>
         </p>
       </div>
     </div>

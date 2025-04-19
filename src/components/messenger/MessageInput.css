@@ -1,0 +1,28 @@
+.message-form {
+  padding: 16px;
+  color: white;
+}
+
+.message-input {
+  all: unset;
+  width: 100%;
+  color: white;
+  background-color: transparent;
+}
+
+.message-input input {
+  color: white;
+}
+
+.message-input .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+.message-input:hover .MuiOutlinedInput-notchedOutline,
+.message-input.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white;
+}
+
+.message-input .MuiInputAdornment-root {
+  color: white;
+}

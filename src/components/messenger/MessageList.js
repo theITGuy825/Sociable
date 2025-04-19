@@ -3,7 +3,7 @@ import { format } from 'date-fns';
 import { useEffect, useState } from 'react';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase'; // Adjust path to your firebase config
-
+import './MessageList.css';
 const MessageItem = ({ message, isCurrentUser, senderName, receiverName }) => {
   return (
     <Box
@@ -17,7 +17,7 @@ const MessageItem = ({ message, isCurrentUser, senderName, receiverName }) => {
     >
       {/* Sender/Receiver name display */}
       <Typography variant="caption" sx={{ 
-        color: 'text.secondary',
+        color: 'white',
         mb: 0.5,
         fontSize: '0.75rem'
       }}>
@@ -93,7 +93,7 @@ const MessageList = ({ messages, currentUser }) => {
     if (messages?.length > 0) {
       fetchUserData();
     }
-  }, [messages]);
+  }, [messages, userData]);
 
   return (
     <Box sx={{ flex: 1, overflowY: 'auto', py: 2 }}>
@@ -117,3 +117,4 @@ const MessageList = ({ messages, currentUser }) => {
 };
 
 export default MessageList;
+

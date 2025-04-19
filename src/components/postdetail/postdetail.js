@@ -150,7 +150,6 @@ const PostDetail = () => {
         <div className="post-detail">
           <div className="post-header">
             <Link to={`/profile/${post.userId}`} className="author-info">
-            <img src={post.userProfilePic} alt="Profile" className="profilepic" width="50" height="50" onError={(e) => (e.target.src = "/profilepic.png")} />
 
               <div>
                 <h2>{post.author}</h2>
@@ -171,8 +170,8 @@ const PostDetail = () => {
                   <img src={cmt.userProfilePic} alt="User" className="comment-pic" width="40" height="40" />
                   <div>
                     <strong>{cmt.userName}</strong>
-                    <p className="post-content">{cmt.text}</p>
                     <p className="comment-meta">Posted on: {formatDate(cmt.timestamp)}</p>
+                    <p className="post-content-users">{cmt.text}</p>
                   </div>
                 </div>
               ))
@@ -182,7 +181,7 @@ const PostDetail = () => {
             {user && (
               <div className="comment-input">
                 <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="Add a comment..." />
-                <button onClick={handleAddComment}>Post</button>
+                <button className="postingComment" onClick={handleAddComment}>Post</button>
               </div>
             )}
           </div>

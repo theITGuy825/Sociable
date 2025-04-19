@@ -127,7 +127,7 @@
   padding: 5px 0;
   border-radius: 0px 0px 10px 10px;
 }
-.search-results a{
+.search-results a {
   color: white;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
@@ -202,4 +202,9 @@
   .sidebar.collapsed .sidebar-content {
     display: none;
   }
+}
+
+.sidebar-title {
+  font-size: 40px;
+  font-family: "Playwrite HU", cursive;
 }

@@ -1,41 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50,200..900&family=Playwrite+HU:wght@100..400&family=Rubik+Mono+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50,200..900&family=Playwrite+HU:wght@100..400&family=Rubik+Mono+One&display=swap");
 
-/*
-Color theme
-#15243b - Dark Blue
-#bae8e5 - Light Blue
-#f0fffc - Lightest Blue
-#ffc750 - Yellow
-#ffc - Light Yellow
-rgb(253, 253, 228) - Lightest Yellow
-#66b2b2 - Dark teal
-#008080; - Teal
-#bae8e5 - Lighter Teal
-#f3fefa - Light Teal
-#FFF0F0 - light rose
-*/
-/* General Layout for Login Page */
+/*Hex	RGB
+Milky dark blue #7289da	(114,137,218)
+Lightest Dark - #424549	(66,69,73)
+Light Dark   -  #36393e	(54,57,62)
+Dark black   -  #282b30	(40,43,48)
+Darkest black - #1e2124	(30,33,36)*/
+
 .login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0fffc;
-  color: #15243b; /* Dark text color */
+  background-color: #1e2124;
+  color: white;
   padding: 20px;
   font-family: "Inconsolata", monospace;
 }
 
-/* Login Form */
 .login-form {
-  background-color: #bae8e5; /* Slightly lighter background for the form */
+  background-color: #36393e;
   border-radius: 10px;
   padding: 20px;
   width: 100%;
-  max-width: 400px; /* Max width to control form size */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  box-shadow: 0 10px 20px #7289da;
   margin-top: 20px;
 }
 
@@ -45,27 +36,7 @@ h2 {
   margin-bottom: 20px;
 }
 
-@keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px); 
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0); 
-  }
-}
 
-img.logo {
-  margin-bottom: -20px;
-  margin-top: -150px;
-  animation: fadeSlideIn 2s ease-in-out; 
-  width: 300px;
-  height: auto;
-
-}
-
-/* Form Input Fields */
 .input {
   margin-bottom: 20px;
   margin-top: 10px;
@@ -81,10 +52,10 @@ img.logo {
 
 .input input {
   padding: 10px;
-  border: 1px solid #4fa3f7;
+  border: 3px solid #7289da;
   border-radius: 5px;
-  background-color: #ffc;
-  color: #15243b;
+  background-color: #4a4b4d;
+  color: white;
   font-size: 14px;
   outline: none;
   margin-top: 5px;
@@ -92,11 +63,15 @@ img.logo {
 }
 
 .input input:hover {
-  background-color: #ffc750;
+  color: white;
+  background-color: #6e6f71;
   transition: all 0.4s ease-in-out;
 }
 
-/* Error Message */
+.input input:focus {
+  background-color: #91a7f7;
+}
+
 .error-message {
   color: red;
   text-align: center;
@@ -104,14 +79,13 @@ img.logo {
   font-size: 14px;
 }
 
-/* Submit Button */
 .form button {
-  background-color: #15243b;
-  color: #ffc750;
+  background-color: #1e2124;
+  color: white;
+  border: 3px solid white;
   padding: 10px 20px;
   width: 100%;
-  border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 20px;
   transition: all 0.4s ease-in-out;
@@ -119,36 +93,30 @@ img.logo {
 }
 
 .form button:hover {
-  background-color: #ffc750;
-  color: #15243b;
+  background-color: #7289da;
+  color: white;
 }
 
-/* Navigation Link */
 p {
   text-align: center;
   margin-top: 10px;
 }
 
-p span {
-  color: #15243b;
+.register-btn {
+  color: #7289da;
   cursor: pointer;
   text-decoration: underline;
   font-weight: bold;
   font-style: italic;
   transition: transform 0.3s ease, color 0.3s ease;
-  
 }
 
-p span:hover {
-  transform: scale(1.5);
+.register-btn:hover {
   color: #ffc750;
 }
 
-/* Logo Image */
-.logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 30px;
+.dontHaveAcc {
+  color: white;
 }
 
 /* Responsive Design */
@@ -169,5 +137,10 @@ p span:hover {
 
 .login-form h2 {
   font-size: 30px;
+  font-family: "Playwrite HU", cursive;
+}
+.login-container h1 {
+  margin-top: -90px;
+  font-size: 40px;
   font-family: "Playwrite HU", cursive;
 }

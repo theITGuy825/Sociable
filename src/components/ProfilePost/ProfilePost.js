@@ -154,7 +154,7 @@ function ProfilePost() {
 
   return (
     <div>
-      <h2>{isViewingOwnProfile ? "Your Posts" : "User's Posts"}</h2>
+      <h2 className="user-post-headings">{isViewingOwnProfile ? "Your Posts" : "User's Posts"}</h2>
       <div className="post-feed-container">
         {posts.length > 0 ? (
           posts.map((post) => (

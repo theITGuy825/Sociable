@@ -14,7 +14,6 @@ import {
   collection,
   doc,
   setDoc,
-  getDocs,
   query,
   where,
   onSnapshot,
@@ -152,7 +151,8 @@ const Messenger = () => {
         <Box
           sx={{
             display: "flex",
-            height: "80vh",
+            height: "auto",
+            maxHeight: "90vh",
             border: "1px solid #ddd",
             borderRadius: 2,
           }}
@@ -180,6 +180,13 @@ const Messenger = () => {
                 startIcon={<AddIcon />}
                 onClick={() => setNewChatOpen(true)}
                 data-testid="new-chat-button"
+                sx={{
+                  backgroundColor: "#3f51b5",
+                  color: "white",
+                  "&:hover": {
+                    backgroundColor: "#303f9f",
+                  },
+                }}
               >
                 New chat
               </Button>
@@ -215,7 +222,7 @@ const Messenger = () => {
                   p: 3,
                 }}
               >
-                <Typography variant="h6" color="textSecondary">
+                <Typography variant="h6" color="white">
                   {newChatOpen
                     ? "Select a user to start chatting"
                     : "Select a chat or start a new conversation"}

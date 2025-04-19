@@ -37,9 +37,7 @@ function Login() {
 
   return (
     <div className="login-container">
-      {/* Logo Image */}
-      
-
+      <h1>Sociable</h1>
       <div className="login-form">
         <h2>LOGIN</h2>
         <form className='form'>
@@ -72,8 +70,8 @@ function Login() {
         </form>
 
         <p>
-          Don't have an account?{" "}
-          <span onClick={() => navigate("/register")}>Register</span>
+          <span className="dontHaveAcc">Don't have an account?</span>{" "}
+          <span className="register-btn"onClick={() => navigate("/register")}>Register</span>
         </p>
       </div>
     </div>

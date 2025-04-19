@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 /* Base container styles */
+/*Hex	RGB
+Milky dark blue #7289da	(114,137,218)
+Lightest Dark - #424549	(66,69,73)
+Light Dark   -  #36393e	(54,57,62)
+Dark black   -  #282b30	(40,43,48)
+Darkest black - #1e2124	(30,33,36)*/
 
 .profile-container {
   display: flex;
@@ -13,7 +19,6 @@
   text-align: left;
 }
 
-/* Content area */
 .profile-content {
   margin-left: 250px;
   flex-grow: 1;
@@ -24,9 +29,8 @@
   font-size: 16px;
 }
 
-/* Profile header */
 .myProfile {
-  font-size: 24px; /* Kept larger for heading */
+  font-size: 24px; 
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
@@ -34,23 +38,17 @@
   padding-bottom: 20px;
   padding-top: 20px;
   width: 100%;
-  --gradient-angle: 0deg;
-  background: linear-gradient(
-    var(--gradient-angle),
-    rgba(105, 167, 161, 1) 0%,
-    rgba(185, 232, 228, 1) 15%,
-    rgba(251, 251, 251, 1) 30%
-  );
-  animation: rotateGradient 20s linear infinite;
-  border: 1px solid #ccc;
+  color: white;
+  border-bottom: 1px solid #ccc;
   justify-content: center;
+  box-shadow: 0px 10px 20px -10px #7289da;
 }
 
-/* Profile picture */
 .profile-picture {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+  
 }
 
 .profile-picture img {
@@ -58,11 +56,10 @@
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #333;
-  background-color: rgb(235, 244, 243);
+  border: 2px solid #ccc;
+  background-color: #1e2124;
 }
 
-/* Edit button */
 .editProfileDetails {
   display: block;
   margin: 10px 0;
@@ -70,26 +67,25 @@
   font-size: 16px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
-  background-color: rgba(105, 167, 161, 1);
+  background-color: #7289da;
   color: white;
-  border: 1px solid black;
+  border: 2px solid #ccc;
   border-radius: 0px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
   text-align: center;
   width: 50%;
   margin-left: 25%;
 }
 
 .editProfileDetails:hover {
-  background-color: rgb(89, 120, 117);
-  color: white;
+  background-color: #282b30;
+  color: #7289da;
 }
 
-/* Profile sections */
-.freelancer-profile,
-.business-profile {
-  background: rgb(238, 248, 247);
+.freelancer-profile
+ {
+  background-color: #282b30;
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
@@ -100,64 +96,70 @@
   font-size: 16px;
 }
 
-.freelancer-profile h3,
-.business-profile h3 {
-  font-size: 20px; /* Slightly larger for subheadings */
+.freelancer-profile h3 {
+  font-size: 20px; 
   font-weight: bold;
-  color: #333;
-  border-bottom: 2px solid #008080;
+  color: white;
+  border-bottom: 2px solid #7289da;
   padding-bottom: 5px;
   margin-bottom: 10px;
   text-align: left;
   font-family: "Inconsolata", monospace;
 }
 
-/* Profile details */
-.freelancer-profile-details p,
-.business-profile p {
+.freelancer-profile-details p{
   font-size: 16px;
   font-weight: bold;
   margin: 10px 0;
-  color: #222;
+  color: white;
   text-align: left;
   font-family: "Inconsolata", monospace;
 }
 
-/* Form elements */
-.freelancer-profile label,
-.business-profile label {
+.freelancer-profile label {
   display: block;
   text-align: left;
   margin-top: 10px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
   font-size: 16px;
+  color: white;
 }
 
 .freelancer-profile input,
-.business-profile input,
-.business-profile textarea {
+.freelancer-profile textarea {
   all: unset;
+  margin-top: 10px;
+  margin-bottom: 10px;
   border-radius: none;
   width: 98%;
   padding: 8px;
-  background-color: rgb(198, 212, 214);
+  background-color: #424549;
   margin-right: -10px;
   justify-self: left;
   border-bottom: 2px solid #ccc;
-  border-radius: 4px;
+  color: white;
   font-size: 16px;
   font-family: "Inconsolata", monospace;
   font-weight: bold;
 }
 
-.business-profile textarea {
+.freelancer-profile input:focus,
+.freelancer-profile textarea:focus {
+  transition: all 0.3s ease;
+  background-color: #7289da;
+  border-bottom: 2px solid white;
+}
+
+.freelancer-profile input:hover,
+.freelancer-profile textarea:hover {
+  background-color: #55585b;
+}
+.freelancer-profile textarea {
   resize: vertical;
   min-height: 80px;
 }
 
-/* Save buttons */
-.business-profile button,
 .freelancer-profile button {
   display: inline-block;
   margin-top: 10px;
@@ -165,39 +167,26 @@
   font-size: 16px;
   font-weight: bold;
   font-family: "Inconsolata", monospace;
-  background-color: rgba(185, 232, 228, 1);
-  color: black;
-  border: 1px solid black;
+  background-color: #282b30;
+  color: white;
+  border: 2px solid #7289da;
   border-radius: 0px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
   text-align: center;
   width: 50%;
   justify-self: center;
   margin-left: 25%;
 }
 
-.business-profile button:hover,
 .freelancer-profile button:hover {
-  background-color: rgba(105, 167, 161, 1);
+  background-color: #7289da;
   color: white;
+  border: 2px solid #ccc;
 }
 
-/* Responsive adjustments */
 @media (max-width: 1000px) {
   .profile-container {
     margin-left: -180px;
   }
-}
-
-@keyframes rotateGradient {
-  to {
-    --gradient-angle: 360deg;
-  }
-}
-
-@property --gradient-angle {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 0deg;
 }

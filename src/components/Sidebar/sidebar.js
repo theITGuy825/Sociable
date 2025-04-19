@@ -96,7 +96,7 @@ function Sidebar() {
 
       {(!isCollapsed || windowWidth > 1000) && (
         <div className="sidebar-content">
-
+          <h1 className="sidebar-title">Sociable</h1>
           <div className="search-container">
             <input
               type="text"

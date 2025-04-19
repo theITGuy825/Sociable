@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
-/* CSS for followers list */
+
 .followers-list {
   display: flex;
   flex-direction: column;
@@ -8,7 +8,6 @@
   overflow-y: auto; 
 }
 
-/* Styling for each follower item */
 .follower-item {
   display: flex;
   align-items: center;
@@ -23,17 +22,16 @@
   background-color: #7289da;
 }
 
-/* Flex container for profile image and full name */
 .follower-info {
   display: flex;
   align-items: center;
-  gap: 5px; /* Space between image and name */
+  gap: 5px; 
 }
 
 .icon-text {
   margin-left: auto;
 }
-/* Profile image styling */
+
 .profile-img {
   width: 40px;
   height: 40px;
@@ -41,7 +39,7 @@
   object-fit: cover;
 }
 
-/* Styling for the full name */
+
 .name-text {
   font-size: 16px;
   font-weight: bold;
@@ -49,18 +47,15 @@
   color: white;
 }
 
-/* Styling for the icon (user or business) */
 .follower-info svg {
   color: white;
 }
 
-/* Styling for the link to the profile */
 .follower-link {
   text-decoration: none;
   color: inherit;
 }
 
-/* Error message styling */
 .noFollowers {
   color: #7289da;
   font-weight: bold;

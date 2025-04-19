@@ -1,14 +1,26 @@
+/*Hex	RGB
+Milky dark blue #7289da	(114,137,218)
+Lightest Dark - #424549	(66,69,73)
+Light Dark   -  #36393e	(54,57,62)
+Dark black   -  #282b30	(40,43,48)
+Darkest black - #1e2124	(30,33,36)*/
 /* Post Feed Scrollable Container */
 .post-feed-container {
-  max-height: 640px; /* Set max height */
-  overflow-y: auto; /* Enable scrolling */
+  max-height: 640px;
+  overflow-y: auto; 
   padding-top: 10px;
   scrollbar-width: thin;
   margin-right: -10px;
   scrollbar-color: transparent transparent;
 }
-
-/* Hide scrollbar for Webkit browsers */
+.user-post-headings {
+  color: white;
+  margin-top: 50px;
+  padding-bottom: 10px;
+  border-bottom: white 2px solid;
+  font-family: "Inconsolata", monospace;
+  font-weight: bold;
+}
 .post-feed-container::-webkit-scrollbar {
   width: 0px;
 }
@@ -18,28 +30,24 @@
   background: transparent;
 }
 
-/* Individual Post styles */
 .post {
   background-color: #282b30;
-  padding: 15px; /* Rounded corners */
+  padding: 15px; 
   font-family: "Inconsolata", monospace;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover effect */
 .post:hover {
   transform: scale(1);
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Post Header */
 .post-header {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
 }
 
-/* Profile Picture */
 .post-header img {
   margin-right: 10px;
   border-radius: 50%;
@@ -47,20 +55,17 @@
   height: 50px;
 }
 
-/* Author Name */
 .post .author {
-  color: #15243b; /* Match sidebar text color */
+  color: #15243b;
   font-weight: bold;
 }
 
-/* Post Content */
 .post .content {
   margin-top: 5px;
   color: #333;
   font-size: 1.1em;
 }
 
-/* Post Action Buttons */
 .post-actions-profile {
   margin-top: 10px;
   display: flex;
@@ -68,30 +73,36 @@
   margin-left: 80%;
 }
 
-/* Edit and Delete Buttons */
 .postSaveCancelbtn {
   display: flex;
+
   .savePostEdit {
     width: 25%;
+    border-radius: 0px;
     margin-left: 50%;
     margin-right: 20px;
-    background-color: rgba(185,232,228,1);
+    background-color: rgba(185, 232, 228, 1);
     color: black;
-    box-sizing:border-box;
+    box-sizing: border-box;
+    font-family: "Inconsolata", monospace;
+    font-weight: bold;
   }
-  .cancelPostEdit{
+  .cancelPostEdit {
     width: 25%;
-    background-color: rgba(185,232,228,1);
+    border-radius: 0px;
+    background-color: rgb(236, 144, 144);
     color: black;
+    font-family: "Inconsolata", monospace;
+    font-weight: bold;
   }
 
-  .cancelPostEdit:hover{
-    background-color: rgba(105,167,161,1);
-    color:white;
+  .cancelPostEdit:hover {
+    background-color: rgb(236, 78, 78);
+    color: white;
   }
 
-  .savePostEdit:hover{
-    background-color: rgba(105,167,161,1);
+  .savePostEdit:hover {
+    background-color: rgba(105, 167, 161, 1);
     color: white;
   }
 }
@@ -103,9 +114,9 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background-color: transparent;
-  background-color: rgba(185, 232, 228, 1);
-  color: black;
+  margin-top: 10px;
+  background-color: #7289da;
+  color: white;
   border-radius: 0px;
   width: 100%;
 }
@@ -121,11 +132,27 @@
 }
 .textArea-editing {
   textarea {
+    all: unset;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:-7.5px;
+    border-radius: none;
+    width: 100%;
+    padding: 8px;
+    background-color: #424549;
     justify-self: center;
-    width: 95%;
+    align-self: center;
+    border-bottom: 2px solid #ccc;
+    color: white;
+    font-size: 16px;
+    font-family: "Inconsolata", monospace;
+    font-weight: bold;
+  }
+
+  textarea:hover {
+    background-color: #55585b;
   }
 }
-/* Responsive Adjustments */
 
 @media (max-width: 1000px) {
   .editing-btn {
@@ -135,12 +162,9 @@
     display: none;
   }
   .savePostEdit {
-    
     margin-left: 30%;
-    
   }
-  .post-actions-profile{
+  .post-actions-profile {
     margin-left: 30%;
   }
 }
-

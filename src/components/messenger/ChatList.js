@@ -3,7 +3,7 @@ import { List, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, Circu
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
 import PropTypes from 'prop-types';
-
+import './ChatList.css';
 const ChatList = ({ chats, currentUser, onSelectChat, loading, activeChat }) => {
   const [otherUsers, setOtherUsers] = useState({});
 
@@ -50,33 +50,33 @@ const ChatList = ({ chats, currentUser, onSelectChat, loading, activeChat }) => 
   );
 
   return (
-    <List>
+    <List className="chat-list">
       {chats?.map((chat) => {
         const otherUser = getOtherUser(chat);
+        const isActive = activeChat === chat.id;
+  
         return (
-          <ListItem 
-            key={chat.id} 
-            button 
+          <ListItem
+            key={chat.id}
             onClick={() => onSelectChat?.(chat.id)}
-            sx={{ bgcolor: activeChat === chat.id ? '#f5f5f5' : 'inherit' }}
+            className={`chat-list-item ${isActive ? 'active' : ''}`}
           >
-            <ListItemAvatar>
+            <ListItemAvatar className="chat-avatar">
               <Avatar src={otherUser.photoURL} alt={otherUser.displayName} />
             </ListItemAvatar>
             <ListItemText
-              primary={otherUser.firstName}
+              primary={
+                <span className="chat-text-primary">{otherUser.firstName}</span>
+              }
               secondary={
-                <>
-                  <Typography
-                    component="span"
-                    variant="body2"
-                    color="text.primary"
-                    noWrap
-                  >
-                    {chat.lastMessageSender === currentUser.firstName ? 'You: ' : ''}
-                    {chat.lastMessage}
-                  </Typography>
-                </>
+                <Typography
+                  component="span"
+                  variant="body2"
+                  className="chat-text-secondary"
+                >
+                  {chat.lastMessageSender === currentUser.firstName ? 'You: ' : ''}
+                  {chat.lastMessage}
+                </Typography>
               }
             />
           </ListItem>
